@@ -6,6 +6,7 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
+  console.log("🚀 ~ file: middleware.ts:9 ~ req:", req);
   const { nextUrl: url, geo } = req;
   const country = geo?.country || "US";
   const city = geo?.city || "San Francisco";
