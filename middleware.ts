@@ -6,15 +6,18 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
-  console.log("🚀 ~ file: middleware.ts:9 ~ req:", req);
   const { nextUrl: url, geo } = req;
   const country = geo?.country || "US";
   const city = geo?.city || "San Francisco";
   const region = geo?.region || "CA";
+  const latitude = geo?.latitude ?? "";
+  const longitude = geo?.longitude ?? "";
 
   url.searchParams.set("country", country);
   url.searchParams.set("city", city);
   url.searchParams.set("region", region);
+  url.searchParams.set("latitude", latitude);
+  url.searchParams.set("longitude", longitude);
 
   return NextResponse.rewrite(url);
 }
