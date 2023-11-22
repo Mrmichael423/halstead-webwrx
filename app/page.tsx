@@ -2,7 +2,8 @@ import Client from './client';
 
 const fetchWeatherData = async (latitude: any, longitude: any): Promise<any> => {
   if(latitude && longitude) {
-    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`);
+
+    const res = await fetch(`https://api.open-meteo.com/v1/gfs?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,rain,snowfall&hourly=temperature_2m&temperature_unit=fahrenheit`);
     return res.json()
 
   }
