@@ -1,12 +1,12 @@
 import Client from './client';
 
 const fetchWeatherData = async (latitude: any, longitude: any): Promise<any> => {
-  if(latitude && longitude) {
+  // if(latitude && longitude) {
 
-    const res = await fetch(`https://api.open-meteo.com/v1/gfs?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,rain,snowfall&hourly=temperature_2m&temperature_unit=fahrenheit`);
+    const res = await fetch(`https://api.open-meteo.com/v1/gfs?latitude=27.9475&longitude=-82.4584&current=temperature_2m,relative_humidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=America%2FNew_York`);
     return res.json()
 
-  }
+  // }
 }
 
 export default async function Home({searchParams}: {searchParams: any}) {
