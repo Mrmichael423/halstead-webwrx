@@ -1,7 +1,7 @@
 'use client'
 import {useState, useEffect} from 'react'
 export default function Client({searchParams, data}: {searchParams: any, data:any}) {
-  const [forecast, setForecast] = useState()   
+  const [forecast, setForecast] = useState<any>();   
 
 
   const dailyHighTemps = data.daily.temperature_2m_max
