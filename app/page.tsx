@@ -1,6 +1,9 @@
 import Image from 'next/image'
 
-export default function Home() {
+export default function Home({region, name, city}) {
+  console.log('🚀 ~ file: page.tsx:4 ~ city:', city);
+  console.log('🚀 ~ file: page.tsx:4 ~ name:', name);
+  console.log('🚀 ~ file: page.tsx:4 ~ region:', region);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
